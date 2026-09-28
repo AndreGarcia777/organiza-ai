@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b6e4f" />
+  <title>Organiza — suas finanças, em conversa</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <header class="topbar"><a class="brand" href="#chat" aria-label="Organiza, página inicial"><span aria-hidden="true">◒</span> organiza</a><button class="contrast" id="contrast-toggle" aria-pressed="false">Alto contraste</button></header>
+  <main id="conteudo">
+    <section class="hero"><p class="eyebrow">SEU DINHEIRO, SEM COMPLICAÇÃO</p><h1>Organize a vida financeira conversando.</h1><p>Conte o que aconteceu. Eu registro, explico e ajudo você a dar pequenos passos.</p></section>
+    <section class="summary" aria-label="Resumo do mês"><article><span>Disponível no mês</span><strong id="balance">R$ 0,00</strong></article><article><span>Gasto este mês</span><strong id="spent">R$ 0,00</strong></article><article><span>Meta em andamento</span><strong id="goal-summary">Nenhuma ainda</strong></article></section>
+    <nav class="tabs" aria-label="Áreas do aplicativo"><button class="tab active" data-view="chat" aria-current="page">Conversar</button><button class="tab" data-view="goals">Metas</button><button class="tab" data-view="reports">Relatórios</button></nav>
+    <section id="chat" class="view active" aria-labelledby="chat-title"><div class="section-heading"><div><p class="eyebrow">AGENTE FINANCEIRO</p><h2 id="chat-title">Como posso ajudar hoje?</h2></div><button id="reset-data" class="text-button">Recomeçar dados</button></div><div id="messages" class="messages" aria-live="polite" aria-label="Conversa"></div><div class="suggestions" aria-label="Sugestões"><button data-message="Gastei R$ 30 no mercado">Gastei R$ 30 no mercado</button><button data-message="Recebi R$ 1.500 de salário">Recebi R$ 1.500 de salário</button><button data-message="Quero guardar R$ 500 até o fim do mês">Criar uma meta</button></div><form id="chat-form" class="composer"><label class="sr-only" for="message-input">Escreva uma mensagem</label><input id="message-input" autocomplete="off" placeholder="Ex.: paguei R$ 45 no transporte" /><button type="button" id="voice-button" class="voice" aria-label="Ditado por voz">⌁</button><button type="submit" class="send">Enviar <span aria-hidden="true">→</span></button></form><p class="helper">Você pode escrever ou falar. Confirme os registros antes de considerar qualquer decisão.</p></section>
+    <section id="goals" class="view" aria-labelledby="goals-title"><div class="section-heading"><div><p class="eyebrow">SEUS PLANOS</p><h2 id="goals-title">Metas em andamento</h2></div><button class="primary" id="new-goal">Nova meta</button></div><div id="goals-list" class="goals-list"></div></section>
+    <section id="reports" class="view" aria-labelledby="reports-title"><p class="eyebrow">VISÃO DO MÊS</p><h2 id="reports-title">Para onde foi seu dinheiro?</h2><p id="report-description" class="report-description"></p><div id="category-chart" class="category-chart" role="img" aria-label="Gráfico de gastos por categoria"></div><div id="tips" class="tips"></div></section>
+  </main>
+  <dialog id="goal-dialog"><form id="goal-form" method="dialog"><button class="close" value="cancel" aria-label="Fechar">×</button><p class="eyebrow">NOVA META</p><h2>Um passo de cada vez</h2><label>O que você quer realizar?<input id="goal-name" required placeholder="Ex.: Reserva de emergência" /></label><label>Quanto deseja guardar? <input id="goal-target" required type="number" min="1" step="0.01" placeholder="500" /></label><label>Até quando? <input id="goal-deadline" required type="date" /></label><button class="primary" value="default">Criar meta</button></form></dialog>
+  <script src="/app.js"></script>
+</body>
+</html>
